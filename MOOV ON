@@ -1,0 +1,98 @@
+index.html
+<!DOCTYPE html>
+<html lang="as">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moov On</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f0ff;
+      color: #292044;
+    }
+    header {
+      background: #6842a6;
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
+    }
+    header h1 { margin: 0; font-size: 34px; }
+    header p { margin-bottom: 0; }
+    main {
+      max-width: 500px;
+      margin: 24px auto;
+      padding: 18px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px #00000012;
+    }
+    h2 { color: #6842a6; }
+    label { display: block; margin: 14px 0 6px; }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+    input, select, textarea {
+      border: 1px solid #d5c9e8;
+      background: white;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    button {
+      margin-top: 16px;
+      border: 0;
+      background: #6842a6;
+      color: white;
+      font-weight: bold;
+    }
+    .note { font-size: 13px; color: #665b76; line-height: 1.5; }
+    footer { text-align: center; padding: 20px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Moov On 💜</h1>
+    <p>Your feelings matter. Your story matters.</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>You are not alone</h2>
+      <p>জীৱনত যিয়েই নহওক, আপোনাৰ কথা গুৰুত্বপূৰ্ণ। মনৰ কথা লিখক।</p>
+      <label for="topic">আপুনি কি বিষয়ে কথা পাতিব বিচাৰে?</label>
+      <select id="topic">
+        <option>Breakup</option>
+        <option>Friendship</option>
+        <option>Career</option>
+        <option>Family</option>
+        <option>Personal problems</option>
+      </select>
+      <label for="message">আপোনাৰ মনৰ কথা লিখক</label>
+      <textarea id="message" placeholder="Write your feelings here..."></textarea>
+      <button onclick="reply()">Get Support</button>
+      <p id="reply" aria-live="polite"></p>
+      <p class="note">এইটো প্ৰাৰম্ভিক Demo। এতিয়ালৈকে আপোনাৰ বাৰ্তা কোনো Admin-লৈ পঠিওৱা নহয় আৰু এইটো প্ৰকৃত AI নহয়।</p>
+    </section>
+  </main>
+  <footer>Moov On · A safe space to express yourself</footer>
+  <script>
+    function reply() {
+      const message = document.getElementById('message').value.trim();
+      const replyBox = document.getElementById('reply');
+      if (!message) {
+        replyBox.textContent = 'অনুগ্ৰহ কৰি প্ৰথমে আপোনাৰ মনৰ কথা লিখক।';
+        return;
+      }
+      replyBox.textContent =
+        'আপোনাৰ কথা ভাগ-বতৰা কৰাৰ বাবে ধন্যবাদ। 💜 ' +
+        'নিজৰ অনুভূতিক সময় দিয়ক। আপুনি বিচাৰিলে বিশ্বাসযোগ্য ব্যক্তিৰ লগতো কথা পাতিব পাৰে।';
+    }
+  </script>
+</body>
+</html>
